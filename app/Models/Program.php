@@ -12,4 +12,9 @@ class Program extends Model
         'detail',
         'image',
     ];
+
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class);
+    }
 }

@@ -10,8 +10,14 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('program_id')
+                ->constrained('programs')
+                ->onDelete('cascade');
+
             $table->string('judul');
             $table->string('image');
+
             $table->timestamps();
         });
     }
